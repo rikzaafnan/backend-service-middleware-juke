@@ -23,7 +23,7 @@ How to install in local computer :
 
 1. **Clone repository:**
    ```bash
-   git clone https://github.com/username/nama-proyek.git
+   git clone https://github.com/rikzaafnan/backend-service-middleware-juke
    cd nama-proyek
 
 ## How to use
