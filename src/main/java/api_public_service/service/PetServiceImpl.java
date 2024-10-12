@@ -39,7 +39,7 @@ public class PetServiceImpl implements PetService {
         List<Pet> pets = new ArrayList<>();
 
         if (clientID == null || clientSecret == null) {
-            log.error("Client ID OR Client Secret is empty ");
+            // log.error("Client ID OR Client Secret is empty ");
             pets = new ArrayList<>();
         }
 
@@ -67,7 +67,7 @@ public class PetServiceImpl implements PetService {
             }
 
         } catch (Exception e) {
-            log.error("Error calling Pet Service API", e);
+            // log.error("Error calling Pet Service API", e);
             return pets;  // Mengembalikan list kosong jika terjadi error
         }
 
