@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  title: RESTful API Pet
+  description: API untuk mengelola data hewan peliharaan
+  version: 1.0.0
+servers:
+  - url: http://localhost:9898
+paths:
+  /api/v1/pets:
+    get:
+      summary: Mendapatkan daftar hewan peliharaan
+      parameters:
+        - name: status
+          in: query
+          required: true
+          description: Status hewan peliharaan (pending, available, sold)
+          schema:
+            type: string
+            enum: [pending, available, sold]
+      responses:
+        '200':
+          description: Daftar hewan peliharaan berhasil diambil
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                    category:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          format: int32
+                        name:
+                          type: string
+                    name:
+                      type: string
+                    photoUrls:
+                      type: array
+                      items:
+                        type: string
+                    tags:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int32
+                          name:
+                            type: string
+                    status:
+                      type: string
